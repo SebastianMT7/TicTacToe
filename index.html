@@ -12,24 +12,41 @@
 <body onload="render()">
     <h1>Tic Tac Toe</h1>
 
-    <div class="playerTurn">
+    <section class="playerTurn">
         <div>
             <svg width="70px" height="70px">
-                <circle id="circle" cx="35" cy="35" r="30" stroke="#00B0EF" stroke-width="10" fill="none"></circle>                
+                <circle id="circle" cx="35" cy="35" r="30" stroke="#00B0EF" stroke-width="10" fill="none"></circle>
             </svg>
         </div>
         <div>
             <svg width="70" height="70">
-                <line id="cross1"x1="0" y1="0" x2="70" y2="70" stroke="#FFC000" stroke-width="10"></line>
+                <line id="cross1" x1="0" y1="0" x2="70" y2="70" stroke="#FFC000" stroke-width="10"></line>
                 <line id="cross2" x1="70" y1="0" x2="0" y2="70" stroke="#FFC000" stroke-width="10"></line>
             </svg>
         </div>
-    </div>
+    </section>
 
     <div id="content"></div>
 
-    <div class="center mt-32">
-        <button onclick="restartGame()">Spiel neu starten</button>
+    <section class="boardPosition mt-32">
+        <div class="scoreBoard mt-32">
+            <h2>Score Board</h2>
+            <div>
+                <div>
+                    <span>Circle Player:</span>
+                    <span id="circleWins">0</span>
+                </div>
+                <div>
+                    <span>Cross Player:</span>
+                    <span id="crossWins">0</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="center">
+        <button id="nextGame" onclick="nextRound()">Next Round</button> <!--disabled richtig anzeigen lassen!-->
+        <button onclick="restartGame()">New Game</button>
     </div>
     <script src="script.js"></script>
 </body>

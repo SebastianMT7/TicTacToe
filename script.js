@@ -18,6 +18,8 @@ const WINNING_COMBINATIONS = [
 ];
 
 let currentPlayer = 'circle';
+let circleWins = 0;
+let crossWins = 0;
 
 
 function render() {
@@ -41,21 +43,7 @@ function render() {
     tableHtml += '</table>';
     // Set table HTML to contentDiv
     contentDiv.innerHTML = tableHtml;
-}
-
-function restartGame() {
-    fields = [
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-    ];
-    render();
+    whichPlayer();
 }
 
 function handleClick(cell, index) {
@@ -67,9 +55,21 @@ function handleClick(cell, index) {
         if (isGameFinished()) {
             const winCombination = getWinningCombination();
             drawWinningLine(winCombination);
-        }  
+            if (currentPlayer === 'cross') {
+                circleWins++;
+            } else {
+                crossWins++;
+            }
+            // document.getElementById("0").removeAttribute("onclick"); 
+            newScore();
+        }
     }
     whichPlayer();
+}
+
+function newScore() {
+    document.getElementById('circleWins').innerHTML = `${circleWins}`;
+    document.getElementById('crossWins').innerHTML = `${crossWins}`;
 }
 
 function whichPlayer() {
@@ -86,6 +86,7 @@ function whichPlayer() {
 
 function isGameFinished() {
     return fields.every((field) => field !== null) || getWinningCombination() !== null;
+
 }
 
 function getWinningCombination() {
@@ -96,6 +97,28 @@ function getWinningCombination() {
         }
     }
     return null;
+}
+
+function nextRound() {
+    fields = [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+    ];
+    render();
+}
+
+function restartGame() {
+    circleWins = 0;
+    crossWins = 0;
+    newScore();
+    nextRound();
 }
 
 function generateCircleSVG() {
@@ -157,3 +180,8 @@ function drawWinningLine(combination) {
     line.style.transformOrigin = `top left`;
     document.getElementById('content').appendChild(line);
 }
+
+
+
+
+

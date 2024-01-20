@@ -4,9 +4,11 @@ body {
     margin: 0;
     color: white;
 }
+
 h1 {
     text-align: center;
 }
+
 #content {
     margin-top: 50px;
     display: flex;
@@ -14,11 +16,13 @@ h1 {
     align-items: center;
     position: relative;
 }
+
 /* Set white border-color and thicker table borders */
 table {
     border-collapse: collapse;
     /* Fix typo: should be 'collapse', not 'coll' */
 }
+
 td {
     width: 100px;
     height: 100px;
@@ -31,15 +35,19 @@ td {
 td:hover {
     background-color: rgba(255, 255, 255, 0.3);
 }
+
 table td {
     border: 5px solid white;
 }
+
 table tr:first-child td {
     border-top: 0;
 }
+
 table tr td:first-child {
     border-left: 0;
 }
+
 table tr:last-child td {
     border-bottom: 0;
 }
@@ -52,6 +60,7 @@ table tr td:last-child {
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 32px;
 }
 
 .mt-32 {
@@ -74,9 +83,34 @@ button:hover {
     background-color: #96cadd;
 }
 
-.playerTurn{
+.playerTurn {
     display: flex;
     justify-content: center;
     margin: 75px 0;
     gap: 50px;
 }
+
+.boardPosition{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 64px;
+    
+}
+
+.scoreBoard {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border: white solid;
+    width: 300px;
+}
+
+h2 {
+    text-decoration: underline;
+}
+
+.scoreBoard div {
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
