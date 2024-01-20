@@ -8,7 +8,7 @@ h1 {
     text-align: center;
 }
 #content {
-    margin-top: 300px;
+    margin-top: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -72,4 +72,11 @@ button {
 
 button:hover {
     background-color: #96cadd;
+}
+
+.playerTurn{
+    display: flex;
+    justify-content: center;
+    margin: 75px 0;
+    gap: 50px;
 }

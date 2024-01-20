@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,8 +8,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tic Tac Toe</title>
 </head>
+
 <body onload="render()">
     <h1>Tic Tac Toe</h1>
+
+    <div class="playerTurn">
+        <div>
+            <svg width="70px" height="70px">
+                <circle id="circle" cx="35" cy="35" r="30" stroke="#00B0EF" stroke-width="10" fill="none"></circle>                
+            </svg>
+        </div>
+        <div>
+            <svg width="70" height="70">
+                <line id="cross1"x1="0" y1="0" x2="70" y2="70" stroke="#FFC000" stroke-width="10"></line>
+                <line id="cross2" x1="70" y1="0" x2="0" y2="70" stroke="#FFC000" stroke-width="10"></line>
+            </svg>
+        </div>
+    </div>
 
     <div id="content"></div>
 
